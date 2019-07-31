@@ -2,10 +2,11 @@ require('dotenv').config();
 
 const admin = require('firebase-admin');
 
-let serviceAccount = require('../review-board-18839-firebase-adminsdk-5xhe1-f3bd7e7801.json');
+let serviceAccount = require('../review-dash-board-firebase-adminsdk-je426-7618ae4918.json');
 
 admin.initializeApp({
-    credential: admin.credential.cert(serviceAccount)
+  credential: admin.credential.cert(serviceAccount),
+  databaseURL: "https://review-dash-board.firebaseio.com"
 });
 
 admin.firestore.setLogFunction((log) => {
